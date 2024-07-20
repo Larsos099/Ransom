@@ -1,4 +1,1 @@
-﻿  main.cpp
-  socket.cpp
-C:\Users\Lars\source\repos\Ransom\main.cpp(2,10): error C1083: Datei (Include) kann nicht geöffnet werden: "logic.h": No such file or directory
-  Code wird generiert...
+﻿LINK : fatal error LNK1104: Datei "C:\Users\Lars\source\repos\Ransom\CryptoPP\CryptoPP.obj" kann nicht geöffnet werden.

